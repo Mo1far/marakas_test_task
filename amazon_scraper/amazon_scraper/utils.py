@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from amazon_scraper.settings import INPUT_KEYWORDS_FILE
 
 
