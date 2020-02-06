@@ -14,10 +14,6 @@ def update_link(link):
     return f'https://www.amazon.com{link}'
 
 
-def take_first(l):
-    return l[0]
-
-
 def clean_date(date):
     return date[:12]
 
@@ -39,5 +35,5 @@ class AmazonScraperItem(scrapy.Item):
                                output_processor=TakeFirst()
                                )
     scraped_date = scrapy.Field(input_processor=MapCompose(str.strip),
-                               output_processor=TakeFirst()
-                               )
+                                output_processor=TakeFirst()
+                                )

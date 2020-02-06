@@ -28,7 +28,7 @@ class AmazonEditioralRecommendationsSpider(scrapy.Spider):
               """
 
     date = datetime.datetime.now()
-    FEED_URI = f'KEYWORDWINNER_{date.year}_{date.now().month}_{date.now().day}.csv'
+    FEED_URI = f'KEYWORDWINNER_{date.year}_{date.month}_{date.day}.csv'
     custom_settings = {
         'FEED_FORMAT': 'csv',
         'FEED_URI': FEED_URI
@@ -56,10 +56,5 @@ class AmazonEditioralRecommendationsSpider(scrapy.Spider):
         loader.add_css('link', 'div.a-spacing-medium>.a-link-normal.s-no-hover::attr(href)')
         loader.add_css('posted_date', '.a-spacing-small>.a-color-secondary::text')
         loader.add_css('title', 'h5.a-spacing-small>span.a-size-large::text')
-
-        # items['publisher'] = response.css('.a-fixed-left-grid-col>div.a-row>a.a-link-normal::text').extract_first()
-        # items['link'] = response.css('div.a-spacing-medium>.a-link-normal.s-no-hover::attr(href)').extract_first().strip()
-        # items['posted_date'] = response.css('.a-spacing-small>.a-color-secondary::text').extract_first().strip(' - 3 Recommendations')
-        # items['title'] = response.css('h5.a-spacing-small>span.a-size-large::text').extract_first().strip()
 
         return loader.load_item()

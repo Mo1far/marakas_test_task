@@ -12,11 +12,11 @@ sudo docker pull scrapinghub/splash
 
 #Run
 Put your keywords line by line to `amazon_scraper/input.txt`
-###Run Splash
+### Run Splash
 ```
 docker run -p 8050:8050 scrapinghub/splash
 ```
-###Run Spiders
+### Run Spiders
 ```
 cd amazon_scraper
 scrapy crawl amazon
