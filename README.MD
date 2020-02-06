@@ -5,7 +5,7 @@ Simple test task for MARAKAS Design Studio
 `Python3.8`
 # Install
 ```
-git clone 
+git clone https://github.com/Mo1far/marakas_test_task
 poetry install
 sudo docker pull scrapinghub/splash
 ```  
